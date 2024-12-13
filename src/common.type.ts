@@ -28,7 +28,6 @@ type styleReturns = {
     color: string;
     headingColor: string;
 }
-  
 
 export type {
     theme,

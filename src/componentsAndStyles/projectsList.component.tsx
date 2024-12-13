@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
 import { PageNumberContext, StylesContext } from "../common.contexts";
 import projectListModel from "../models/projectList.model";
 import "./common.styles.css";
@@ -7,7 +7,7 @@ import { styleReturns } from "../common.type";
 function ProjectsList() {
     const pageNumber = useContext(PageNumberContext);
     const styles:styleReturns = useContext(StylesContext);
-    const tableData = projectListModel.get(pageNumber);
+    const tableData = useMemo(() => projectListModel.get(pageNumber), [pageNumber]);
 
     return (
         <div className="project-list-container" style={{ backgroundColor: styles.backgroundColor, color: styles.color }}>

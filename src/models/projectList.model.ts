@@ -36,6 +36,13 @@ class ProjectListModel {
         return showableList;
     }
 
+    isPageAccessible(currentPageNumber:number, actionType:"increase"|"decrease"):boolean {
+        switch(actionType) {
+            case "increase": return !(currentPageNumber*5 >= this.#rawData.length);
+            case "decrease": return currentPageNumber > 1;
+        }
+    }
+
     holdsValidData() {
         return ((Date.now() - this.#lastUpdate) < 86400 && this.#rawData.length !== 0)
     }

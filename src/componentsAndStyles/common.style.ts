@@ -15,7 +15,7 @@ function commonStyles(theme:theme):styleReturns {
     const darkMode:styleReturns = {
         backgroundColor: "#121212",
         color: "#E0E0E0",
-        tableHeaderColor: "#3700b3",
+        tableHeaderColor: "#bb86fc",
         tableRowHoverColor: "#444",
         paginationBtnColor: "#bb86fc",
         paginationBtnHoverColor: "#3700b3",

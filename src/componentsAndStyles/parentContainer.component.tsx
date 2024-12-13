@@ -2,10 +2,12 @@ import React, { lazy, Suspense, useMemo, useState } from "react";
 import { styleReturns, theme } from "../common.type";
 import commonStyles from "./common.style";
 import { PageNumberContext, StylesContext } from "../common.contexts";
-import { Accessibility, Loader, Pagination } from "./helpers.component";
+import Loader from "./loader.component";
 import projectListModel from "../models/projectList.model";
 import { fetchData } from "../utilsAndServices/api.service";
 import "./common.styles.css";
+import Pagination from "./pagination.component";
+import Accessibility from "./accessibility.component";
 const ProjectsListLazy = lazy(() => import("./projectsList.component"));
 
 function ParentContainer() {
@@ -32,8 +34,10 @@ function ParentContainer() {
                     </Suspense>
                 </PageNumberContext.Provider>
                 <div className="parent-action-bar">
+                    <>
+                        <Accessibility currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} />
+                    </>
                     <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
-                    <Accessibility currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} />
                 </div>
             </div>
         </StylesContext.Provider>
