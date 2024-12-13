@@ -3,9 +3,9 @@ import { stylesObject, tableItem } from "./common.type";
 
 const StylesContext = createContext<stylesObject>({});
 
-const ProjectsDataContext = createContext<tableItem[]>([]);
+const PageNumberContext = createContext<number>(0);
 
 export {
     StylesContext,
-    ProjectsDataContext
+    PageNumberContext
 }

@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
-import { ProjectsDataContext, StylesContext } from "../common.contexts";
+import React, { useContext, useMemo } from "react";
+import { PageNumberContext, StylesContext } from "../common.contexts";
+import projectListModel from "../models/projectList.model";
 
 function ProjectsList() {
-    const tableData = useContext(ProjectsDataContext);
+    const pageNumber = useContext(PageNumberContext);
     const styles = useContext(StylesContext);
+    const tableData = projectListModel.get(pageNumber);
 
     return (
         <div>
