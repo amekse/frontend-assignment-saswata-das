@@ -1,0 +1,46 @@
+.parent-container {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.parent-action-bar {
+    width: 40%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-list-container {
+    width: 40%;
+    height: 40%;
+    margin-bottom: 16px;
+}
+
+.project-list-table {
+    width: 100%;
+    height: 100%;
+
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 4px;
+    text-align: center;
+}
+
+.parent-container-header {
+    width: 40%;
+    margin-bottom: 16px;
+}
+
+.parent-container-header-text {
+    font-size: 20px;
+    font-weight: 600;
+}

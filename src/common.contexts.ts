@@ -1,7 +1,8 @@
 import { createContext } from "react";
-import { stylesObject, tableItem } from "./common.type";
+import { styleReturns, tableItem } from "./common.type";
+import commonStyles from "./componentsAndStyles/common.style";
 
-const StylesContext = createContext<stylesObject>({});
+const StylesContext = createContext<styleReturns>(commonStyles("light"));
 
 const PageNumberContext = createContext<number>(0);
 

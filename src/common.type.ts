@@ -6,29 +6,35 @@ type tableItem = {
     amountPledged: number
 }
 
-type styleItem = {
-    [key:string]: string
-}
-
-type stylesObject = {
-    [key:string]: styleItem
-}
-
 type paginationProps = {
     setPageNumber: (value:number) => void,
-    pageNumber: number
+    pageNumber: number                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 }
 
 type accessibilityProps = {
     currentTheme: theme,
-    setCurrentTheme: (value:theme) => void
+    setCurrentTheme: (value:theme) => void                                                                                                                                                                  
 }
+
+type rawData = {[key:string]: any} 
+
+type styleReturns = {
+    backgroundColor: string;
+    tableHeaderColor: string;
+    tableRowHoverColor: string;
+    paginationBtnColor: string;
+    paginationBtnHoverColor: string;
+    pageNumberColor: string;
+    color: string;
+    headingColor: string;
+}
+  
 
 export type {
     theme,
-    tableItem,
-    styleItem,
-    stylesObject,
+    tableItem,                                                                                          
+    styleReturns,
     paginationProps,
-    accessibilityProps
-}
+    accessibilityProps,
+    rawData                                                                                                  
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

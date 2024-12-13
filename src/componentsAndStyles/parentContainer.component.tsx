@@ -1,33 +1,37 @@
 import React, { lazy, Suspense, useMemo, useState } from "react";
-import { stylesObject, theme } from "../common.type";
+import { styleReturns, theme } from "../common.type";
 import commonStyles from "./common.style";
 import { PageNumberContext, StylesContext } from "../common.contexts";
 import { Accessibility, Loader, Pagination } from "./helpers.component";
 import projectListModel from "../models/projectList.model";
 import { fetchData } from "../utilsAndServices/api.service";
+import "./common.styles.css";
 const ProjectsListLazy = lazy(() => import("./projectsList.component"));
 
 function ParentContainer() {
     const [currentTheme, setCurrentTheme] = useState<theme>("light");
-    const stylesList:stylesObject = useMemo(() => commonStyles(currentTheme), [currentTheme]);
-    const [pageNumber, setPageNumber] = useState<number>(0);
+    const stylesList:styleReturns = useMemo(() => commonStyles(currentTheme), [currentTheme]);
+    const [pageNumber, setPageNumber] = useState<number>(1);
 
     function ProjectionsListLazyDataFetch() {
         if (!projectListModel.holdsValidData()) {
-            throw fetchData;
+            throw fetchData();
         }
         return <ProjectsListLazy />;
     }
 
     return (
         <StylesContext.Provider value={stylesList}>
-            <div>
+            <div className="parent-container" style={{ backgroundColor: stylesList.backgroundColor }}>
+                <div className="parent-container-header">
+                    <span className="parent-container-header-text" style={{ color: stylesList.headingColor }}>SAASLab Interview Assignment</span>
+                </div>
                 <PageNumberContext.Provider value={pageNumber}>
                     <Suspense fallback={<Loader />}>
                         <ProjectionsListLazyDataFetch />
                     </Suspense>
                 </PageNumberContext.Provider>
-                <div>
+                <div className="parent-action-bar">
                     <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
                     <Accessibility currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} />
                 </div>
