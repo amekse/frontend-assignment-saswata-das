@@ -23,7 +23,7 @@ function ParentContainer() {
         setTotalPageCount(projectListModel.totalPageCount());
         return <ProjectsListLazy />;
     }
-
+ 
     return (
         <StylesContext.Provider value={stylesList}>
             <div className="parent-container" style={{ backgroundColor: stylesList.backgroundColor }} data-testid="parent-page">
