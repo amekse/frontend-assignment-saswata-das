@@ -4,22 +4,22 @@ function commonStyles(theme:theme):styleReturns {
     const lightMode:styleReturns = {
         backgroundColor: "#FFFFFF",
         color: "#1A1A1A",
-        tableHeaderColor: "#007bff",
+        tableHeaderColor: "#95B8D1",
         tableRowHoverColor: "#f1f1f1",
-        paginationBtnColor: "#007bff",
+        paginationBtnColor: "#95B8D1",
         paginationBtnHoverColor: "#0056b3",
-        pageNumberColor: "#007bff",
+        pageNumberColor: "#95B8D1",
         headingColor: "#333333",
     };
 
     const darkMode:styleReturns = {
         backgroundColor: "#121212",
         color: "#E0E0E0",
-        tableHeaderColor: "#bb86fc",
+        tableHeaderColor: "#809BCE",
         tableRowHoverColor: "#444",
-        paginationBtnColor: "#bb86fc",
+        paginationBtnColor: "#809BCE",
         paginationBtnHoverColor: "#3700b3",
-        pageNumberColor: "#bb86fc",
+        pageNumberColor: "#809BCE",
         headingColor: "#E0E0E0",
     };
       

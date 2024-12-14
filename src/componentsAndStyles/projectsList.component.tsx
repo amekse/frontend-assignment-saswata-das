@@ -15,7 +15,7 @@ function ProjectsList() {
                 <tbody>
                     <tr key="table-head" className="project-list-table-head">
                         <th key="table-head-slno" style={{ backgroundColor: styles.tableHeaderColor }}>S.No.</th>
-                        <th key="table-head-funded" style={{ backgroundColor: styles.tableHeaderColor }}>Percatage Funded</th>
+                        <th key="table-head-funded" style={{ backgroundColor: styles.tableHeaderColor }}>Percentage Funded</th>
                         <th key="table-head-pledged" style={{ backgroundColor: styles.tableHeaderColor }}>Amount Pledged</th>
                     </tr>
                     {
