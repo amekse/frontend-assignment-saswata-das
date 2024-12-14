@@ -2,20 +2,42 @@
     width: 100%;
     height: 100%;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .parent-action-bar {
     width: 40%;
     margin-top: 8px;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .project-list-container {
@@ -46,8 +68,13 @@ th:last-child {
 .parent-container-header {
     width: 40%;
     margin-bottom: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
 }
 
 .parent-container-header-text {
@@ -68,11 +95,13 @@ th:last-child {
     color: white;
 }
 .pagination-button:hover {
-    filter: brightness(90%);
+    -webkit-filter: brightness(90%);
+            filter: brightness(90%);
 }
 .pagination-button:disabled {
     opacity: 0.5;
-    filter: brightness(100%) !important;
+    -webkit-filter: brightness(100%) !important;
+            filter: brightness(100%) !important;
 }
 
 .pagination-text {
@@ -88,19 +117,26 @@ th:last-child {
     font-size: 20px;
 }
 .theme-button:hover {
-    filter: brightness(90%);
+    -webkit-filter: brightness(90%);
+            filter: brightness(90%);
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
 
 .loader {
     border-radius: 50%;
     width: 20px;
     height: 20px;
-    animation: spin 2s linear infinite;
+    -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
 }
 
 @media only screen and (max-width: 900px) {
