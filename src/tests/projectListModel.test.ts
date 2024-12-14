@@ -12,7 +12,7 @@ describe('projection list data model coverage', () => {
 
     test('check proper api data to ui data', () => {
         projectListModel.set(correctApiData);
-        const actual = projectListModel.get(1);
+        const actual = projectListModel.get(1); 
         expect(actual).toEqual(correctProjectsModelExpectedTableData);
     })
 
