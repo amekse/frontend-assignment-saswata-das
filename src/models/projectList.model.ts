@@ -14,6 +14,7 @@ class ProjectListModel {
     }
 
     set(rawData:rawData[]) {
+        this.#rawData = [];
         rawData.forEach(data => {
             let checksArray = [];
 
@@ -33,6 +34,7 @@ class ProjectListModel {
                 this.#rawData.push(data);
             }
         })
+        this.#lastUpdate = Date.now();
     }
 
     get(pageNumber:number):tableItem[] {
@@ -61,6 +63,10 @@ class ProjectListModel {
 
     holdsValidData() {
         return ((Date.now() - this.#lastUpdate) < 86400 && this.#rawData.length !== 0)
+    }
+
+    totalPageCount() {
+        return Math.ceil(this.#rawData.length/5);
     }
 
     clearAll() {

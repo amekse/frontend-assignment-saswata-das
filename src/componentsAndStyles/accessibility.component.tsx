@@ -17,9 +17,9 @@ function Accessibility(props:accessibilityProps) {
 
     return (
         <>
-            <button className="theme-button" style={{ backgroundColor: styles.paginationBtnColor }} onClick={handleThemeChange}>
+            <button data-testid="theme-toggle-button" className="theme-button" style={{ backgroundColor: styles.paginationBtnColor }} onClick={handleThemeChange}>
                 {
-                    currentTheme === "light" ? <span>&#x25C9;</span> : <span>&#x25CB;</span>
+                    currentTheme === "light" ? <span>&#x1F506;</span> : <span>&#x1F505;</span>
                 }
             </button>
         </>

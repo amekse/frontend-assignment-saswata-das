@@ -24,9 +24,10 @@ function ParentContainer() {
 
     return (
         <StylesContext.Provider value={stylesList}>
-            <div className="parent-container" style={{ backgroundColor: stylesList.backgroundColor }}>
+            <div className="parent-container" style={{ backgroundColor: stylesList.backgroundColor }} data-testid="parent-page">
                 <div className="parent-container-header">
                     <span className="parent-container-header-text" style={{ color: stylesList.headingColor }}>SAASLab Interview Assignment</span>
+                    <span className="parent-container-header-text" style={{ color: stylesList.headingColor }}>Saswata Das</span>
                 </div>
                 <PageNumberContext.Provider value={pageNumber}>
                     <Suspense fallback={<Loader />}>
