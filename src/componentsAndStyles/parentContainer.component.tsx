@@ -14,11 +14,13 @@ function ParentContainer() {
     const [currentTheme, setCurrentTheme] = useState<theme>("light");
     const stylesList:styleReturns = useMemo(() => commonStyles(currentTheme), [currentTheme]);
     const [pageNumber, setPageNumber] = useState<number>(1);
+    const [totalPageCount, setTotalPageCount] = useState<number>(1);
 
     function ProjectionsListLazyDataFetch() {
         if (!projectListModel.holdsValidData()) {
             throw fetchData();
         }
+        setTotalPageCount(projectListModel.totalPageCount);
         return <ProjectsListLazy />;
     }
 
@@ -38,7 +40,7 @@ function ParentContainer() {
                     <>
                         <Accessibility currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} />
                     </>
-                    <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber} />
+                    <Pagination totalPageCount={totalPageCount} pageNumber={pageNumber} setPageNumber={setPageNumber} />
                 </div>
             </div>
         </StylesContext.Provider>

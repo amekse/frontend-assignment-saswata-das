@@ -8,7 +8,8 @@ type tableItem = {
 
 type paginationProps = {
     setPageNumber: (value:number) => void,
-    pageNumber: number                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+    pageNumber: number,
+    totalPageCount: number                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
 }
 
 type accessibilityProps = {

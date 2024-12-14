@@ -6,7 +6,7 @@ import "./common.styles.css";
 import { StylesContext } from "../common.contexts";
 
 function Pagination(props:paginationProps) {
-    const { pageNumber, setPageNumber } = props;
+    const { pageNumber, setPageNumber, totalPageCount } = props;
     const styles:styleReturns = useContext(StylesContext);
     const [pageEnd, setPageEnd] = useState(false);
 
@@ -34,7 +34,7 @@ function Pagination(props:paginationProps) {
     return (
         <div onClick={handlePageChange}>
             <button data-testid="pagination-decrease" action-id="decrease" className="pagination-button" style={{ backgroundColor: styles.paginationBtnColor }} disabled={pageNumber === 1}>&#x23F4;</button>
-            <span data-testid="pagination-current-page" className="pagination-text" style={{ color: styles.color }}>{pageNumber}/{projectListModel.totalPageCount()}</span>
+            <span data-testid="pagination-current-page" className="pagination-text" style={{ color: styles.color }}>{pageNumber}/{totalPageCount}</span>
             <button data-testid="pagination-increase" action-id="increase" className="pagination-button" style={{ backgroundColor: styles.paginationBtnColor }} disabled={pageEnd}>&#x23F5;</button>
         </div>
     )
