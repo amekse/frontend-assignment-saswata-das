@@ -20,7 +20,7 @@ function ParentContainer() {
         if (!projectListModel.holdsValidData()) {
             throw fetchData();
         }
-        setTotalPageCount(projectListModel.totalPageCount);
+        setTotalPageCount(projectListModel.totalPageCount());
         return <ProjectsListLazy />;
     }
 
