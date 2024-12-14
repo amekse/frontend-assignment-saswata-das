@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/frontend-assignment-saswata-das/static/css/main.9d38ba37.css",
+    "main.js": "/frontend-assignment-saswata-das/static/js/main.f096f769.js",
+    "static/js/81.4225c5ac.chunk.js": "/frontend-assignment-saswata-das/static/js/81.4225c5ac.chunk.js",
+    "index.html": "/frontend-assignment-saswata-das/index.html",
+    "main.9d38ba37.css.map": "/frontend-assignment-saswata-das/static/css/main.9d38ba37.css.map",
+    "main.f096f769.js.map": "/frontend-assignment-saswata-das/static/js/main.f096f769.js.map",
+    "81.4225c5ac.chunk.js.map": "/frontend-assignment-saswata-das/static/js/81.4225c5ac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9d38ba37.css",
+    "static/js/main.f096f769.js"
+  ]
+}
