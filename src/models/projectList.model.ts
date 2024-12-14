@@ -14,7 +14,25 @@ class ProjectListModel {
     }
 
     set(rawData:rawData[]) {
-        this.#rawData = rawData;
+        rawData.forEach(data => {
+            let checksArray = [];
+
+            if(data.hasOwnProperty("s.no") && typeof data["s.no"] === "number") {
+                checksArray.push(true);
+            }
+
+            if(data.hasOwnProperty("amt.pledged") && typeof data["amt.pledged"] === "number") {
+                checksArray.push(true);
+            }
+
+            if(data.hasOwnProperty("percentage.funded") && typeof data["percentage.funded"] === "number") {
+                checksArray.push(true);
+            }
+
+            if(!checksArray.includes(false) && checksArray.length === 3) {
+                this.#rawData.push(data);
+            }
+        })
     }
 
     get(pageNumber:number):tableItem[] {
@@ -24,13 +42,11 @@ class ProjectListModel {
             const readTill = (pageNumber*5 > this.#rawData.length) ? this.#rawData.length : pageNumber*5;
             for (let i=lastRead; i < readTill; i++) {
                 const data = this.#rawData[i];
-                if (data.hasOwnProperty("s.no") && data.hasOwnProperty("amt.pledged") && data.hasOwnProperty("percentage.funded")) {
-                    showableList.push({
-                        slNo: data["s.no"],
-                        amountPledged: data["amt.pledged"],
-                        percentageFunded: data["percentage.funded"]
-                    });
-                }
+                showableList.push({
+                    slNo: data["s.no"],
+                    amountPledged: data["amt.pledged"],
+                    percentageFunded: data["percentage.funded"]
+                });
             }
         }
         return showableList;
@@ -45,6 +61,11 @@ class ProjectListModel {
 
     holdsValidData() {
         return ((Date.now() - this.#lastUpdate) < 86400 && this.#rawData.length !== 0)
+    }
+
+    clearAll() {
+        this.#lastUpdate = 0;
+        this.#rawData = [];
     }
 }
 
