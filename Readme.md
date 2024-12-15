@@ -1,49 +1,95 @@
-# Frontend Assignment
 
+# SAASLab Kickstarter Projects - Frontend Assignment
 
-## Assignment
+## Description
+This project displays a list of highly-rated Kickstarter projects. It fetches project data from a web API, displays it in a paginated table, and includes accessibility and theming features (light and dark mode). The goal was to meet the assignment requirements with a clean and user-friendly UI.
 
-You are required to fetch the details of the highly-rated kickstarter projects by implementing an AJAX call to their APIs.
+## Live Demo
+[URL](https://amekse.github.io/frontend-assignment-saswata-das)
 
-Use the web API (link : https://raw.githubusercontent.com/saaslabsco/frontend-assignment/refs/heads/master/frontend-assignment.json) ) to fetch the details of specific projects.
+Hosted at Github Pages.
 
-## Minimum Requirements
+## Assignment Requirements
+The project was built to satisfy the following requirements:
 
-1. Create a table and list the following three attributes for all the projects:
-    * S.No.
-    * Percentage funded
-    * Amount pledged
+1. Fetch details of highly-rated Kickstarter projects from a web API.
+2. Display the following attributes in a table:
+   - **S.No.**
+   - **Percentage Funded**
+   - **Amount Pledged**
+3. Paginate the data with a maximum of 5 records per page.
+4. Use raw CSS for styling (no CSS frameworks).
+5. Host the project online and submit both the repository and hosted URL.
+6. Implement accessibility and an aesthetically pleasing UI for extra points.
 
-1. Ensure that the UI is aesthetically pleasing to gain extra points.
-1. Implement pagination with maximum 5 records per page.
+## Folder Structure
+```
+/src
+    -- index.tsx
+    -- index.css
+    -- App.tsx
+    -- App.css
+    -- common.contexts.ts
+    -- common.types.ts
+    -- /componentsAndStyles
+        -- parentContainer.component.tsx
+        -- projectsList.component.tsx
+        -- pagination.component.tsx
+        -- loader.component.tsx
+        -- accessibility.component.tsx
+        -- common.style.ts
+        -- common.styles.css
+    -- /models
+        -- projectList.model.ts
+    -- /utilsAndServices
+        -- api.service.ts
+        -- common.utils.ts
+    -- tests
+        -- projectList.test.tsx
+        -- projectListModel.test.ts
+        -- dataForTest.constants.ts
+```
 
-### Expected Output format
+## Testing
+This project uses **React Testing Library** and **Jest** for unit testing. To run tests, use:
 
-| **S.No.** | **Percentage funded** | **Amount pledged** |
-|-----------|-----------------------|--------------------|
-| 0         | 186                   | 15283              |
+```bash
+npm test
+```
 
+### Test Summary:
+**Area:** Model
+**Scenarios Covered:**
+    -   **Valid Data:** Ensures proper conversion of API data to table-compatible UI data.
+    -   **Invalid Page Numbers:** Tests boundary conditions for invalid page requests (e.g., `0`, `out-of-range`).
+    -   **Malformed or Empty Data:** Ensures that the model handles bad or missing API data gracefully by returning empty results.
+**Tools Used:** Jest
 
-## Good to have
+**Area:** Components
+**Scenarios Covered:**
+    -   **Context-Driven Rendering:** Confirms that components render appropriate data and styles based on provided contexts:
+        -   **Theme Context (Light/Dark):** Validates dynamic theme application to UI elements.
+        -   **Page Context:** Ensures proper data rendering for different pages.
+    -   **UI Element Content:** Checks table data accuracy against the expected results for given inputs.
+**Tools Used:** React Testing Library, Jest
 
-1. Unit tests.
-1. Accessibility.
+## Technologies Used
+- **React** (Frontend Framework)
+- **TypeScript** (Static Typing)
+- **Raw CSS** (Styling)
+- **React Testing Library** (Testing)
+- **Jest** (Unit Tests)
 
+## Challenges and Improvements
 
-## Steps for submission
+### Challenges
+- Implementing the Lazy and Suspense to the extent of asynchronous data fetching.
 
-1. Fork this repo.
-1. Do changes to the above assignment.
-1. Email the assignment back to us with:
-    1. Link of the open source repo.
-    1. Link of the assignment hosted online. (You can use any free tools to host this assignment, eg. vercel, netlify or heroku). It should be accessible online for atleast 7 days.
+### Potential Improvements
+- Add search and filter features to enhance usability.
+- Optimize performance for large datasets.
 
-
-## Frameworks Allowed
-1. React/Vanilla JS for JavaScript
-1. No framework for CSS. Only Raw CSS is allowed.
-
-## Note
-
-1. Result on platforms like codesandbox, replit are not accepted. 
-1. Private unaccessible links will lead to rejection.
+## Author
+**Saswata Das**
+[Github](https://github.com/amekse)
+[Linkedin](https://www.linkedin.com/in/swtdas/)
