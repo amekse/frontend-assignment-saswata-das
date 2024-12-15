@@ -1,5 +1,5 @@
 
-# SAASLab Kickstarter Projects - Frontend Assignment
+# SAASLab - Frontend Assignment
 
 ## Description
 This project displays a list of highly-rated Kickstarter projects. It fetches project data from a web API, displays it in a paginated table, and includes accessibility and theming features (light and dark mode). The goal was to meet the assignment requirements with a clean and user-friendly UI.
